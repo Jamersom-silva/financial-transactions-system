@@ -1,87 +1,87 @@
-# 💰 Finance Tracker — Sistema de Transações Financeiras
+# 💰 Finance Tracker — Financial Transaction Management System
 
-## 📌 Sobre o Projeto
+## 📌 About the Project
 
-O **Finance Tracker** é uma aplicação de console desenvolvida em **Java 17 + Maven + SQLite**, criada com o objetivo de simular um sistema real de controle financeiro pessoal.
+**Finance Tracker** is a console-based application built with **Java 17 + Maven + SQLite**, designed to simulate a real-world personal financial management system.
 
-O projeto foi estruturado seguindo uma arquitetura em camadas (Domain, Service, Repository e UI), aplicando boas práticas de organização, separação de responsabilidades e validações de regra de negócio.
+The project follows a layered architecture (Domain, Service, Repository, and UI), applying best practices such as separation of concerns, centralized business rules, and validation logic.
 
-Este projeto representa a **Versão 1 (V1)** de um sistema evolutivo, pensado para crescer progressivamente em complexidade e recursos.
-
----
-
-## 🎯 Proposta da Aplicação
-
-A proposta do sistema é permitir que o usuário:
-
-* Registre entradas e saídas financeiras
-* Filtre transações por múltiplos critérios
-* Visualize um resumo financeiro (entradas, saídas e saldo)
-* Persista dados em banco SQLite
-
-O foco da V1 é fornecer uma base sólida e organizada, pronta para evolução futura.
+This project represents **Version 1 (V1)** of an evolving system, structured to grow progressively in complexity and features.
 
 ---
 
-## 🧱 Arquitetura do Projeto
+## 🎯 Application Proposal
+
+The system allows users to:
+
+* Register income and expense transactions
+* Filter transactions using multiple criteria
+* View financial summaries (income, expenses, and balance)
+* Persist data using SQLite database
+
+The focus of V1 is to provide a solid and well-organized foundation, ready for future evolution.
+
+---
+
+## 🧱 Project Architecture
 
 ```
 src/main/java/com/jamersom/financetracker
 ├── App.java
-├── domain/        → Entidades e enums (Transaction, Summary, TransactionType)
-├── repository/    → Persistência SQLite via JDBC
-├── service/       → Regras de negócio e validações
-├── ui/            → Interface de console (menu e interação)
-└── util/          → Utilitários (validação, datas, dinheiro)
+├── domain/        → Entities and enums (Transaction, Summary, TransactionType)
+├── repository/    → SQLite persistence via JDBC
+├── service/       → Business rules and validations
+├── ui/            → Console interface (menu and interaction)
+└── util/          → Utilities (validation, dates, money)
 ```
 
-### 🔹 Camadas
+### 🔹 Layers
 
-* **Domain** → Modelos imutáveis do sistema
-* **Repository** → Comunicação com banco via JDBC
-* **Service** → Centralização das regras de negócio
-* **UI** → Interface interativa via terminal
-* **Util** → Formatação e validações auxiliares
-
----
-
-## 🗄 Banco de Dados
-
-* Banco: **SQLite**
-* Arquivo gerado automaticamente em `/data/finance-tracker.db`
-* Datas armazenadas em formato ISO (yyyy-MM-dd)
-* Valores armazenados com `BigDecimal`
+* **Domain** → Immutable system models
+* **Repository** → Database communication via JDBC
+* **Service** → Centralized business rules
+* **UI** → Interactive terminal interface
+* **Util** → Formatting and helper validations
 
 ---
 
-## 🚀 Funcionalidades — Versão 1
+## 🗄 Database
 
-✔ Registrar transações (ENTRADA / SAÍDA)
-✔ Listar todas as transações
-✔ Filtrar por:
-
-* Data inicial e final
-* Valor mínimo e máximo
-* Tipo (entrada/saída)
-* Categoria
-* Palavra-chave na descrição
-  ✔ Excluir transação por ID
-  ✔ Visualizar sumário financeiro (entradas, saídas e saldo)
-  ✔ Formatação de data no padrão brasileiro (dd-MM-yyyy)
-  ✔ Formatação de valores em Real (R$ 1.000,00)
-  ✔ Testes unitários com JUnit 5
+* Database: **SQLite**
+* File automatically generated at `/data/finance-tracker.db`
+* Dates stored in ISO format (yyyy-MM-dd)
+* Monetary values stored using `BigDecimal`
 
 ---
 
-## ▶ Como Executar
+## 🚀 Features — Version 1
 
-### Rodar testes
+✔ Register transactions (INCOME / EXPENSE)
+✔ List all transactions
+✔ Filter by:
+
+* Start and end date
+* Minimum and maximum amount
+* Type (income/expense)
+* Category
+* Keyword in description
+  ✔ Delete transaction by ID
+  ✔ View financial summary (income, expenses, balance)
+  ✔ Brazilian date format display (dd-MM-yyyy)
+  ✔ Brazilian currency formatting (R$ 1,000.00 equivalent formatting)
+  ✔ Unit tests with JUnit 5
+
+---
+
+## ▶ How to Run
+
+### Run tests
 
 ```
 mvn clean test
 ```
 
-### Executar aplicação
+### Run application
 
 ```
 mvn exec:java
@@ -89,54 +89,54 @@ mvn exec:java
 
 ---
 
-## 🧠 Conceitos Aplicados
+## 🧠 Applied Concepts
 
 * Java 17
 * Maven
 * JDBC
 * SQLite
-* Arquitetura em camadas
+* Layered architecture
 * Builder Pattern (FilterCriteria)
-* Imutabilidade
-* BigDecimal para valores monetários
-* Validação centralizada
-* Testes com JUnit 5
+* Immutability
+* BigDecimal for monetary precision
+* Centralized validation
+* Unit testing with JUnit 5
 
 ---
 
-## 🔮 Próximas Versões
+## 🔮 Upcoming Versions
 
-### 🟡 Versão 1.1
+### 🟡 Version 1.1
 
-* Atualizar (editar) transação por ID
-* Exportação para CSV
-* Relatório mensal agrupado por mês
+* Update (edit) transaction by ID
+* CSV export
+* Monthly report grouped by month
 
-### 🟠 Versão 2
+### 🟠 Version 2
 
-* CRUD completo de categorias (entidade própria)
-* Relatórios estatísticos
-* Dashboard gráfico
-* API REST com Spring Boot
-* Autenticação de usuários
+* Full CRUD for categories (separate entity)
+* Statistical reports
+* Graphical dashboard
+* REST API with Spring Boot
+* User authentication
 
-### 🔵 Versão 3
+### 🔵 Version 3
 
-* Interface Web
-* Deploy em ambiente cloud
-* Controle multiusuário
-
----
-
-## 📈 Objetivo Técnico
-
-Este projeto foi desenvolvido como parte da evolução técnica em Java, com foco em:
-
-* Aplicar arquitetura limpa em aplicações pequenas
-* Trabalhar com banco relacional real
-* Simular cenários de sistemas financeiros
-* Evoluir um sistema gradualmente como ocorre em projetos reais
+* Web interface
+* Cloud deployment
+* Multi-user support
 
 ---
 
+## 📈 Technical Objective
 
+This project was developed as part of a Java technical growth journey, focusing on:
+
+* Applying clean architecture principles in small applications
+* Working with a real relational database
+* Simulating real-world financial system scenarios
+* Evolving a system progressively as happens in real projects
+
+---
+
+##
