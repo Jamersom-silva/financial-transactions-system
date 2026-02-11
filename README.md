@@ -139,8 +139,4 @@ Este projeto foi desenvolvido como parte da evolução técnica em Java, com foc
 
 ---
 
-## 👨‍💻 Autor
 
-Jamersom Silva
-Desenvolvedor Java em formação
-Projeto desenvolvido para portfólio e evolução técnica
